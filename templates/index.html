@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vinix Guess | Number Game</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div class="logo">VINIX <span>GUESS</span></div>
+            <p class="subtitle">Challenge your brain. Find the number.</p>
+        </header>
+
+        <main class="game-card">
+
+            <section id="start-screen">
+                <div class="badge">🎮 NUMBER CHALLENGE</div>
+                <h1>Ready to <span>Guess?</span></h1>
+                <p class="description">
+                    Find the secret number between 1 and 100.
+                </p>
+
+                <label for="playerName">Player Name</label>
+                <input type="text" id="playerName"
+                       placeholder="Enter your name" maxlength="30">
+
+                <label for="difficulty">Choose Difficulty</label>
+                <select id="difficulty">
+                    <option value="easy">Easy - 10 attempts</option>
+                    <option value="medium">Medium - 7 attempts</option>
+                    <option value="hard">Hard - 5 attempts</option>
+                </select>
+
+                <button id="startBtn" class="primary-btn">
+                    Start Game →
+                </button>
+            </section>
+
+            <section id="game-screen" hidden>
+                <div class="game-top">
+                    <div>
+                        <small>PLAYER</small>
+                        <h3 id="displayName"></h3>
+                    </div>
+                    <div class="level-badge" id="displayLevel"></div>
+                </div>
+
+                <div class="attempt-box">
+                    <p>Remaining Attempts</p>
+                    <h2 id="attempts">10</h2>
+                </div>
+
+                <p class="description">
+                    Enter your number between 1 and 100.
+                </p>
+
+                <input type="number" id="guessInput"
+                       placeholder="Enter your guess" min="1" max="100">
+
+                <button id="guessBtn" class="primary-btn">
+                    Check My Guess
+                </button>
+
+                <div id="message" class="message"></div>
+
+                <button id="restartBtn" class="secondary-btn">
+                    New Game
+                </button>
+            </section>
+
+            <section class="leaderboard">
+                <h2>🏆 Leaderboard</h2>
+                <div id="leaderboard">
+                    Loading scores...
+                </div>
+            </section>
+
+        </main>
+
+        <footer>
+            <p>Built with Python & Flask | Vinix Internship Project</p>
+        </footer>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
